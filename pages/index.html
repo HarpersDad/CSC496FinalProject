@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .topnav {
+                background-color: #333;
+                overflow: hidden;
+            }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            /* Change the color of links on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+        <title>Roll Stats</title>
+    </head>
+    <h1>Roll Stats</h1>
+    <nav class="topnav">
+        <a href='/pages/home.html'>Home</a>
+        <a class="active" href='/pages/index.html'>Roll Stats</a>
+        <a href='/pages/grab.html'>Retrieve Character</a>
+    </nav>
+
+    <p></p>
+
+    <script>
+        function setRand(poop) 
+        {
+            var numArray = [4] 
+            numArray[0]=Math.floor((Math.random()*6)+1)
+            numArray[1]=Math.floor((Math.random()*6)+1)
+            numArray[2]=Math.floor((Math.random()*6)+1)
+            numArray[3]=Math.floor((Math.random()*6)+1)
+
+            var i = 0
+            for(i; i < numArray.length - 1; i++)
+            {
+                if (numArray[i] < numArray[i+1])
+                {
+                var temp = numArray[i];
+                numArray[i] = numArray[i+1];
+                numArray[i+1] = temp;
+                i = -1;
+                }
+            }
+
+            document.getElementById(poop).value = numArray[0] + numArray[1] + numArray[2]; 
+        }
+    </script>
+
+    <body>
+        <form method="post" action="/addname">
+            <label>Enter Your Character's Stats</label><br>
+            <p>
+                <h2>Character Name</h2>
+                <input id="name" type="text" name="name" placeholder="Enter Name..." required>
+            </p>
+            <p>
+                <h3>Strength</h3>
+                <input id="str" type="text" name="str" readonly="readonly" placeholder="Enter Strength..." required>
+                <input type="button" value="Roll!" onclick="setRand('str')">
+            </p>
+            <p>
+                <h3>Constitution</h3>
+                <input id="con" type="text" name="con" readonly="readonly" placeholder="Enter Constitution..." required>
+                <input type="button" value="Roll!" onclick="setRand('con')">
+            </p>
+            <p>
+                <h3>Dexterity</h3>
+                <input id="dex" type="text" name="dex" readonly="readonly" placeholder="Enter Dexterity..." required>
+                <input type="button" value="Roll!" onclick="setRand('dex')">
+            </p>
+            <p>
+                <h3>Wisdom</h3>
+                <input id="wis" type="text" name="wis" readonly="readonly" placeholder="Enter Wisdom..." required>
+                <input type="button" value="Roll!" onclick="setRand('wis')">
+            </p>
+            <p>
+                <h3>Intelligence</h3>
+                <input id="int" type="text" name="int" readonly="readonly" placeholder="Enter Intelligence..." required>
+                <input type="button" value="Roll!" onclick="setRand('int')">
+            </p>
+            <p>
+                <h3>Charisma</h3>
+                <input id="cha" type="text" name="cha" readonly="readonly" placeholder="Enter Charisma..." required>
+                <input type="button" value="Roll!" onclick="setRand('cha')">
+            </p>
+            <p>
+                <h3>User Name</h3>
+                <input id="userName" type="text" name="userName" placeholder="Enter User Name..." required><br>
+                User Name will eventually be removed once the login feature is implemented.
+            </p>
+            <input type="submit" value="Add Stats">
+        </form>
+    </body>
+</html>

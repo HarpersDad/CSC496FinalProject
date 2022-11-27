@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .topnav {
+                background-color: #333;
+                overflow: hidden;
+            }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            /* Change the color of links on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+        <title>Home</title>
+    </head>
+    <h1>Home</h1>
+    <nav class="topnav">
+        <a class="active" href='/pages/home.html'>Home</a>
+        <a href='/pages/index.html'>Roll Stats</a>
+        <a href='/pages/grab.html'>Retrieve Character</a>
+    </nav>
+
+    <body>
+        <h2>Roll Stats!!!</h2>
+
+        <p>
+            This site was created with NODE.js, EXPRESS, and MONGOOSE.  Using HTML, JavaScript, Python, and MongoDB.
+        </p>
+        <p>
+            I set out to create a site that allows a person to "roll" stats for a Dungeons and Dragons 5E character.
+            The user can set the character's name, then they may roll the stats for the character. After this is done,
+            the user can submit the character and save it to the database.  I am still working on a retrieval system for
+            players who wish to view saved characters.
+        </p>
+        <p>
+            I would also like to implement a login system that would allow users to save characters under their username.
+            This way when a person logs in and chooses to retrieve a character, only their created characters will appear.
+    </body>
+</html>
